@@ -1,0 +1,85 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<div class="container">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Real Estate</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Listings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <body>
+    <div class="container">
+        <main class="py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h2 th:text="${annonce.name}" lass="text-center mb-4"></h2>
+
+                        <div class="card">
+                            <img class="card-img-top" th:src="${annonce.photos}" alt="House Image">
+                            <div class="card-body">
+                                <h4 class="card-title">3 Bedrooms, 2 Bathrooms</h4>
+                                <h4 th:text="${annonce.name}" class="card-title"></h4>
+                                <p th:text="${annonce.description}" class="card-text"></p>
+
+                                <a href="#" class="btn btn-primary">Contact</a>
+                            </div>
+                        </div>
+                    </div>
+
+                            <div class="col-md-4">
+                                <h2>Contact</h2>
+                                <table class="table table-striped">
+                                    <tbody>
+                                    <tr>
+                                        <td>Name:</td>
+
+                                        <td th:text="${user.nom}"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Name:</td>
+
+                                        <td th:text="${user.prenom}"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Email:</td>
+                                        <td th:text="${user.email}"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Phone:</td>
+                                        <td th:text="${user.telephone}"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Address:</td>
+                                        <td th:text="${user.adresse}"></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    </body>
+</div>
+</html>

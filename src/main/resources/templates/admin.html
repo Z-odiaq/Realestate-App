@@ -1,0 +1,89 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<div class="container">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Real Estate</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Listings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <body>
+    <div class="container">
+            <div class="container">
+                <h2>Admin Panel</h2>
+                <a th:href="@{/admin/annonce/add}" class="btn btn-primary">Ajouter</a>
+
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Titre</th>
+                        <th>Description</th>
+                        <th>Date</th>
+                        <th>Location</th>
+                        <th>Disponibilité</th>
+                        <th>Superficie</th>
+                        <th>Type</th>
+                        <th>Nb. Pieces</th>
+                        <th>Price</th>
+                        <th>Contact</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="annonce: ${listAnnonces}">
+                        <td th:text="${annonce.id}"></td>
+                        <td th:text="${annonce.name}"></td>
+                        <td th:text="${annonce.description}"></td>
+                        <td th:text="${annonce.date}"></td>
+                        <td th:text="${annonce.localisation}"></td>
+                        <td th:text="${annonce.disponibilite}"></td>
+                        <td th:text="${annonce.superficie}"></td>
+                        <td th:text="${annonce.type}"></td>
+                        <td th:text="${annonce.nombre_pieces}"></td>
+                        <td th:text="${annonce.prix}"></td>
+                        <td th:text="${annonce.contact}"></td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                                <a th:href="@{/annonces/{id}(id=${annonce.id})}" class="btn btn-primary">View</a>
+                                <a th:href="@{/admin/annonce/edit/{id}(id=${annonce.id})}" class="btn btn-warning">Edit</a>
+                                <a th:href="@{/admin/annonce/delete/{id}(id=${annonce.id})}" class="btn btn-danger">Delete</a>
+
+                            </div>
+
+
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+    </body>
+</div>
+</html>
+
+
+
+

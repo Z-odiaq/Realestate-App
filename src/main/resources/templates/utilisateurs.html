@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Utilisateur</title>
+</head>
+<body>
+    <h1>Utilisateurs</h1>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>Mail</th>
+            <th>Telephone</th>
+            <th>Adresse</th>
+            <th>Code Postal</th>
+            <th>Ville</th>
+            <th>Role</th>
+        </tr>
+        <tr th:each="utilisateur : ${utilisateurs}">
+            <td th:text="${utilisateur.id}"></td>
+            <td th:text="${utilisateur.nom}"></td>
+            <td th:text="${utilisateur.prenom}"></td>
+            <td th:text="${utilisateur.mail}"></td>
+            <td th:text="${utilisateur.telephone}"></td>
+            <td th:text="${utilisateur.adresse}"></td>
+            <td th:text="${utilisateur.codePostal}"></td>
+            <td th:text="${utilisateur.ville}"></td>
+            <td th:text="${utilisateur.role}"></td>
+        </tr>
+    </table>
+
+
+
+
+</body>
+</html>
