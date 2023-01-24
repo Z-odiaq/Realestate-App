@@ -34,7 +34,6 @@ public class UserService {
             throw new RuntimeException("Please enter password");
         }
 
-
         return userRepository.save(utilisateur);
     }
 
@@ -56,4 +55,3 @@ public class UserService {
         userRepository.deleteById(id);
     }
 }
-
